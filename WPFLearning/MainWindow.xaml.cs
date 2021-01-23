@@ -62,7 +62,7 @@ namespace WPFLearning
             var combo = sender as ComboBox;
             var value = combo.SelectedValue as ComboBoxItem;
 
-            txtNote.Text = value.Content.ToString();
+            txtNote.Text = (string)value.Content;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
