@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeView", "WpfTreeView\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewMVVM", "WpfTreeViewMVVM\WpfTreeViewMVVM.csproj", "{EF63C028-6E8A-463C-83E8-5DC65966C8DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasetto.Word", "Fasetto.Word\Fasetto.Word.csproj", "{27083FD7-4F58-4695-A23B-E1EF135BD94D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
