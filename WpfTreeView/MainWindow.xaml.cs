@@ -69,7 +69,7 @@ namespace WpfTreeView
         {
 
             #region Initialize Checks
-            
+
             var item = sender as TreeViewItem;
 
             // If the item only contains the dummy data

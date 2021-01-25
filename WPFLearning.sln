@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFBasic", "WPFLearning\WPF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeView", "WpfTreeView\WpfTreeView.csproj", "{62001943-E2B7-428B-9EE6-F8A016826D3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewMVVM", "WpfTreeViewMVVM\WpfTreeViewMVVM.csproj", "{EF63C028-6E8A-463C-83E8-5DC65966C8DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF63C028-6E8A-463C-83E8-5DC65966C8DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
