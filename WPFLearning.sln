@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFBasic", "WPFLearning\WPFBasic.csproj", "{42A633CF-1CF3-4995-A74F-EA0A41352273}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeView", "WpfTreeView\WpfTreeView.csproj", "{62001943-E2B7-428B-9EE6-F8A016826D3E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTreeViewMVVM", "WpfTreeViewMVVM\WpfTreeViewMVVM.csproj", "{EF63C028-6E8A-463C-83E8-5DC65966C8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasetto.Word", "Fasetto.Word\Fasetto.Word.csproj", "{27083FD7-4F58-4695-A23B-E1EF135BD94D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFBasic", "WPFBasic\WPFBasic.csproj", "{42A633CF-1CF3-4995-A74F-EA0A41352273}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62001943-E2B7-428B-9EE6-F8A016826D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27083FD7-4F58-4695-A23B-E1EF135BD94D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

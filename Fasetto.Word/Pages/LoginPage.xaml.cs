@@ -18,7 +18,7 @@ namespace Fasetto.Word
     /// <summary>
     /// LoginPage.xaml 的互動邏輯
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class LoginPage : BasePage
     {
         public LoginPage()
         {
