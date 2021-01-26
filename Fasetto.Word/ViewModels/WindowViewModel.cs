@@ -30,6 +30,10 @@ namespace Fasetto.Word
         /// </summary>
         private int mWindowRadius = 10;
 
+        /// <summary>
+        /// The last known dock position
+        /// </summary>
+        private WindowDockPosition mDockPosition = WindowDockPosition.Undocked;
         #endregion
 
         #region Public Properties
@@ -44,10 +48,12 @@ namespace Fasetto.Word
         /// </summary>
         public double WindowMinimumHeight { get; set; } = 400;
 
+        public bool Borderless { get => mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked; }
+
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder { get; set; } = 6;
+        public int ResizeBorder { get => Borderless ? 0 : 6; }
 
         /// <summary>
         /// The size of resize border aroung the window, taking into account the outer margin
@@ -57,7 +63,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The padding of the inner content of the main window
         /// </summary>
-        public Thickness InnerContentPadding { get => new Thickness(ResizeBorder); }
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
         /// <summary>
         /// The margin arround the window to allow for a drop shadow 
@@ -152,7 +158,19 @@ namespace Fasetto.Word
 
             // Fix window resize issue 
             var resizer = new WindowResizer(window);
+
+            // Listen out for dock changes
+            resizer.WindowDockChanged += (dock) =>
+            {
+                // Store last position
+                mDockPosition = dock;
+
+                // Fire off resize events
+                WindowResized();
+            };
         }
+
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
         #endregion
 
@@ -169,8 +187,21 @@ namespace Fasetto.Word
 
             // Add the window position so its a "ToScreen"
             return new Point(position.X + mWindow.Left, position.Y + mWindow.Top);
+        }
 
-
+        /// <summary>
+        /// If the window resizes to a special position (docked or maximized)
+        /// this will update all required property change events to set the borders and radius values
+        /// </summary>
+        private void WindowResized()
+        {
+            // Fire off events for all properties that are affected by a resize
+            OnPropertyChanged(nameof(Borderless));
+            OnPropertyChanged(nameof(ResizeBorderThickness));
+            OnPropertyChanged(nameof(OuterMarginSize));
+            OnPropertyChanged(nameof(OuterMarginSizeThickness));
+            OnPropertyChanged(nameof(WindowRadius));
+            OnPropertyChanged(nameof(WindowCornerRadius));
         }
 
         #endregion
