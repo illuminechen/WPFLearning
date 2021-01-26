@@ -4,7 +4,6 @@ using System.Globalization;
 
 namespace Fasetto.Word
 {
-
     /// <summary>
     /// Converts <see cref="ApplicationPage"/> to an actual view/page
     /// </summary>
