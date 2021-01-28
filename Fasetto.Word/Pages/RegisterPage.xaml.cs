@@ -4,13 +4,14 @@ using System.Security;
 namespace Fasetto.Word
 {
     /// <summary>
-    /// LoginPage.xaml 的互動邏輯
+    /// RegisterPage.xaml 的互動邏輯
     /// </summary>
-    public partial class LoginPage : BasePage<LoginViewModel>, IHavePassword
+    public partial class RegisterPage : BasePage<LoginViewModel>, IHavePassword
     {
-        public LoginPage()
+        public RegisterPage()
         {
             InitializeComponent();
+
         }
 
         /// <summary>

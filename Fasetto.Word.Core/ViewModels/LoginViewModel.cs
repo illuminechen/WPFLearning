@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Fasetto.Word
+namespace Fasetto.Word.Core
 {
     /// <summary>
     /// The View Model for Login page
     /// </summary>
-    public class ChatViewModel : BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
         #region Private Member
 
@@ -40,6 +40,11 @@ namespace Fasetto.Word
         /// </summary>
         public ICommand LoginCommand { get; set; }
 
+        /// <summary>
+        /// The command to register
+        /// </summary>
+        public ICommand RegisterCommand { get; set; }
+
         #endregion
 
         #region Constructor
@@ -48,10 +53,11 @@ namespace Fasetto.Word
         /// Deafult Constructor
         /// </summary>
         /// <param name="window"></param>
-        public ChatViewModel()
+        public LoginViewModel()
         {
             // Create commands
             LoginCommand = new RelayParameterizedCommand(async (parameter) => await Login(parameter));
+            RegisterCommand = new RelayCommand(async () => await Register());
         }
 
         /// <summary>
@@ -61,13 +67,25 @@ namespace Fasetto.Word
         /// <returns></returns>
         public async Task Login(object parameter)
         {
-            await RunCommand(() => this.LoginIsRunning,async () =>
-            {
-                await Task.Delay(500);
+            await RunCommand(() => LoginIsRunning, async () =>
+             {
+                 await Task.Delay(500);
 
-                var email = this.Email;
-                (parameter as IHavePassword).SecurePassword.Unsecure();
-            });
+                 var email = Email;
+                 (parameter as IHavePassword).SecurePassword.Unsecure();
+             });
+        }
+
+        /// <summary>
+        /// Take the user to the register page
+        /// </summary>
+        /// <returns></returns>
+        public async Task Register()
+        {
+            // TODO: Go to register page?
+            IoC.Get<ApplicationViewModel>().CurrentPage = ApplicationPage.Register;
+
+            await Task.Delay(1);
         }
 
         #endregion

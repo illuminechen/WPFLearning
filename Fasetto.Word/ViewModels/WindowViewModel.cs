@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Fasetto.Word.Core;
 using System.Windows;
 using System.Windows.Input;
 
@@ -48,17 +44,17 @@ namespace Fasetto.Word
         /// </summary>
         public double WindowMinimumHeight { get; set; } = 500;
 
-        public bool Borderless { get => mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked; }
+        public bool Borderless => mWindow.WindowState == WindowState.Maximized || mDockPosition != WindowDockPosition.Undocked;
 
         /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder { get => Borderless ? 0 : 6; }
+        public int ResizeBorder => Borderless ? 0 : 6;
 
         /// <summary>
         /// The size of resize border aroung the window, taking into account the outer margin
         /// </summary>
-        public Thickness ResizeBorderThickness { get => new Thickness(ResizeBorder + OuterMarginSize); }
+        public Thickness ResizeBorderThickness => new Thickness(ResizeBorder + OuterMarginSize);
 
         /// <summary>
         /// The padding of the inner content of the main window
@@ -77,7 +73,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The margin arround the window to allow for a drop shadow 
         /// </summary>
-        public Thickness OuterMarginSizeThickness { get => new Thickness(OuterMarginSize); }
+        public Thickness OuterMarginSizeThickness => new Thickness(OuterMarginSize);
 
         /// <summary>
         /// The radius of the edges of the window
@@ -91,7 +87,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The radius of the edges of the window
         /// </summary>
-        public CornerRadius WindowCornerRadius { get => new CornerRadius(WindowRadius); }
+        public CornerRadius WindowCornerRadius => new CornerRadius(WindowRadius);
 
         /// <summary>
         /// The height of the title bar / caption of the window
@@ -102,7 +98,7 @@ namespace Fasetto.Word
         /// The height of the title bar / caption of the window
         /// </summary>
 
-        public GridLength TitleHeightGridLength { get => new GridLength(TitleHeight + ResizeBorder); }
+        public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
 
         #endregion
 
@@ -169,8 +165,6 @@ namespace Fasetto.Word
                 WindowResized();
             };
         }
-
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
 
         #endregion
 

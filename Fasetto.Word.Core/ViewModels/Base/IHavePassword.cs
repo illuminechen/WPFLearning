@@ -1,6 +1,6 @@
 ﻿using System.Security;
 
-namespace Fasetto.Word
+namespace Fasetto.Word.Core
 {
     /// <summary>
     /// An interface for a class that can provide a secure password

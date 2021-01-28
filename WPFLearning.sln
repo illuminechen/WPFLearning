@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasetto.Word", "Fasetto.Wor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFBasic", "WPFBasic\WPFBasic.csproj", "{42A633CF-1CF3-4995-A74F-EA0A41352273}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasetto.Word.Core", "Fasetto.Word.Core\Fasetto.Word.Core.csproj", "{073B57AB-8DFB-4A41-BE62-67192293365C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42A633CF-1CF3-4995-A74F-EA0A41352273}.Release|Any CPU.Build.0 = Release|Any CPU
+		{073B57AB-8DFB-4A41-BE62-67192293365C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{073B57AB-8DFB-4A41-BE62-67192293365C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{073B57AB-8DFB-4A41-BE62-67192293365C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{073B57AB-8DFB-4A41-BE62-67192293365C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

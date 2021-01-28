@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
+﻿using System.Security;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
 
-namespace Fasetto.Word
+namespace Fasetto.Word.Core
 {
     /// <summary>
     /// The View Model for Login page
     /// </summary>
-    public class LoginViewModel : BaseViewModel
+    public class ChatViewModel : BaseViewModel
     {
         #region Private Member
 
@@ -48,7 +43,7 @@ namespace Fasetto.Word
         /// Deafult Constructor
         /// </summary>
         /// <param name="window"></param>
-        public LoginViewModel()
+        public ChatViewModel()
         {
             // Create commands
             LoginCommand = new RelayParameterizedCommand(async (parameter) => await Login(parameter));
