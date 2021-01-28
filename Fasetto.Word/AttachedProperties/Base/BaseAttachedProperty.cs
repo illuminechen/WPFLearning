@@ -17,6 +17,11 @@ namespace Fasetto.Word
         /// </summary>
         public event Action<DependencyObject, DependencyPropertyChangedEventArgs> ValueChanged = (sender, e) => { };
 
+        /// <summary>
+        /// Fired when the value changes, even if the value is the same
+        /// </summary>
+        public event Action<DependencyObject, object> ValueUpdated = (sender, value) => { };
+
         #endregion
 
         #region Public Properties
@@ -33,13 +38,38 @@ namespace Fasetto.Word
         /// <summary>
         /// The attached property for this class
         /// </summary>
-        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached("Value", typeof(Property), typeof(BaseAttachedProperty<Parent, Property>), new PropertyMetadata(new PropertyChangedCallback(OnValuePropertyChanged)));
+        public static readonly DependencyProperty ValueProperty = DependencyProperty.RegisterAttached(
+            "Value",
+            typeof(Property),
+            typeof(BaseAttachedProperty<Parent, Property>),
+            new UIPropertyMetadata(
+                default(Property),
+                new PropertyChangedCallback(OnValuePropertyChanged),
+                new CoerceValueCallback(OnValuePropertyUpdated)
+                ));
 
-            /// <summary>
-            /// The callback event when the <see cref="ValueProperty"/> is changed
-            /// </summary>
-            /// <param name="d">The UI element that had it's property changed</param>
-            /// <param name="e">The arguments for the event</param>
+        /// <summary>
+        /// The callback event when the <see cref="ValueProperty"/> is changed, even if it is the smae value
+        /// </summary>
+        /// <param name="d">The UI element that had it's property changed</param>
+        /// <param name="value">The updated value</param>
+        private static object OnValuePropertyUpdated(DependencyObject d, object value)
+        {
+            // Call the parent function
+            Instance.OnValueUpdated(d, value);
+
+            // Call event listeners
+            Instance.ValueUpdated(d, value);
+
+            // Return the value
+            return value;
+        }
+
+        /// <summary>
+        /// The callback event when the <see cref="ValueProperty"/> is changed
+        /// </summary>
+        /// <param name="d">The UI element that had it's property changed</param>
+        /// <param name="e">The arguments for the event</param>
         private static void OnValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             // Call the parent function
@@ -73,6 +103,16 @@ namespace Fasetto.Word
         /// <param name="d">The UI element that this property was changed for</param>
         /// <param name="e">The arguments for this event</param>
         public virtual void OnValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// The method that is called when any attached property of this type is changed, even if the value is the same
+        /// </summary>
+        /// <param name="d">The UI element that this property was changed for</param>
+        /// <param name="value">The updated value</param>
+        public virtual void OnValueUpdated(DependencyObject d, object value)
         {
 
         }

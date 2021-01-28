@@ -54,7 +54,7 @@ csharp_style_pattern_matching_over_is_with_cast_check = true:error
 # Force pattern matching over null checking
 #                if (o is string s)
 #    instead of: var s = (string)o; if (s != null) {}
-csharp_style_pattern_matching_over_as_with_null_check = true
+csharp_style_pattern_matching_over_as_with_null_check = true:error
 
 # Force using tuple names never the Item1, Item2 etc...
 dotnet_style_explicit_tuple_names = true:error
