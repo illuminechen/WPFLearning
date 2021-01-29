@@ -10,6 +10,6 @@
       d:DesignHeight="700" d:DesignWidth="700"
       Title="Chat">
     <Border>
-   
+        <TextBlock Text="Hello Fasetto" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Border>
 </local:BasePage>

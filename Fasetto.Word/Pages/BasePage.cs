@@ -6,19 +6,10 @@ using System.Windows.Controls;
 namespace Fasetto.Word
 {
     /// <summary>
-    /// A base page for all pages to gain base functionality
+    /// The base page for all pages to gain base functionlity
     /// </summary>
-    public class BasePage<VM> : Page where VM : BaseViewModel, new()
+    public class BasePage : Page
     {
-        #region Private Members
-
-        /// <summary>
-        /// The View Model associated with this page
-        /// </summary>
-        private VM mViewModel;
-
-        #endregion
-
         #region Public Properties
 
         /// <summary>
@@ -34,27 +25,16 @@ namespace Fasetto.Word
         /// <summary>
         /// The time any slide animation take to complete
         /// </summary>
-        public float SlideSeconds { get; set; } = 0.8f;
+        public float SlideSeconds { get; set; } = 0.4f;
 
+        /// <summary>
+        /// A flag to indicate if this page should animate out on load.
+        /// Useful for when we are moving the page to another frame
+        /// </summary>
+        public bool ShouldAnimateOut { get; set; }
         /// <summary>
         /// The View Model associated with this page
         /// </summary>
-        public VM ViewModel
-        {
-            get => mViewModel;
-            set
-            {
-                // If nothing has changed, return 
-                if (mViewModel == value)
-                    return;
-
-                // Update the value
-                mViewModel = value;
-
-                // Set the data context to this page 
-                DataContext = mViewModel;
-            }
-        }
 
         #endregion
 
@@ -71,13 +51,9 @@ namespace Fasetto.Word
             }
 
             Loaded += BasePage_LoadedAsync;
-
-            // Create a default View Model
-            ViewModel = new VM();
         }
 
         #endregion
-
         #region Animation Load / Unload
 
         /// <summary>
@@ -87,8 +63,15 @@ namespace Fasetto.Word
         /// <param name="e"></param>
         private async void BasePage_LoadedAsync(object sender, System.Windows.RoutedEventArgs e)
         {
-            // Animation the page in
-            await AnimateInAsync();
+
+            // If we are setup to animate out on load
+            if (ShouldAnimateOut)
+                // Animate the page out
+                await AnimateOutAsync();
+            // Otherwise...
+            else
+                // Animate the page in
+                await AnimateInAsync();
         }
 
         /// <summary>
@@ -131,6 +114,56 @@ namespace Fasetto.Word
 
                     break;
             }
+        }
+
+        #endregion
+    }
+
+
+    /// <summary>
+    /// A base page with added ViewModel support
+    /// </summary>
+    public class BasePage<VM> : BasePage where VM : BaseViewModel, new()
+    {
+        #region Private Members
+
+        /// <summary>
+        /// The View Model associated with this page
+        /// </summary>
+        private VM mViewModel;
+
+        #endregion
+
+        #region Public Properties
+
+        public VM ViewModel
+        {
+            get => mViewModel;
+            set
+            {
+                // If nothing has changed, return 
+                if (mViewModel == value)
+                    return;
+
+                // Update the value
+                mViewModel = value;
+
+                // Set the data context to this page 
+                DataContext = mViewModel;
+            }
+        }
+
+        #endregion
+
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public BasePage() : base()
+        {
+            // Create a default View Model
+            ViewModel = new VM();
         }
 
         #endregion

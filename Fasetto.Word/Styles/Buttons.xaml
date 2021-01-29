@@ -173,7 +173,7 @@
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <ColorAnimation To="{StaticResource WordOrange}" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
+                                    <ColorAnimation To="Transparent" Duration="0:0:0.3" Storyboard.TargetName="border" Storyboard.TargetProperty="Background.Color"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

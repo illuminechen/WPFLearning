@@ -6,7 +6,7 @@ namespace Fasetto.Word
     /// <summary>
     /// RegisterPage.xaml 的互動邏輯
     /// </summary>
-    public partial class RegisterPage : BasePage<LoginViewModel>, IHavePassword
+    public partial class RegisterPage : BasePage<RegisterViewModel>, IHavePassword
     {
         public RegisterPage()
         {

@@ -10,9 +10,9 @@ using System.Windows.Input;
 namespace Fasetto.Word.Core
 {
     /// <summary>
-    /// The View Model for Login page
+    /// The View Model for Register page
     /// </summary>
-    public class LoginViewModel : BaseViewModel
+    public class RegisterViewModel : BaseViewModel
     {
         #region Private Member
 
@@ -53,11 +53,11 @@ namespace Fasetto.Word.Core
         /// Deafult Constructor
         /// </summary>
         /// <param name="window"></param>
-        public LoginViewModel()
+        public RegisterViewModel()
         {
             // Create commands
-            LoginCommand = new RelayParameterizedCommand(async (parameter) => await LoginAsync(parameter));
-            RegisterCommand = new RelayCommand(async () => await RegisterAsync());
+            RegisterCommand = new RelayParameterizedCommand(async (parameter) => await RegisterAsync(parameter));
+            LoginCommand = new RelayCommand(async () => await LoginAsync());
         }
 
         /// <summary>
@@ -65,17 +65,11 @@ namespace Fasetto.Word.Core
         /// </summary>
         /// <param name="parameter">The <see cref="SecureString"/> passed in from the view for the users password</param>
         /// <returns></returns>
-        public async Task LoginAsync(object parameter)
+        public async Task RegisterAsync(object parameter)
         {
             await RunCommand(() => LoginIsRunning, async () =>
              {
                  await Task.Delay(500);
-
-                 // Go to chat page
-                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
-
-                 //var email = Email;
-                 //(parameter as IHavePassword).SecurePassword.Unsecure();
              });
         }
 
@@ -83,10 +77,10 @@ namespace Fasetto.Word.Core
         /// Take the user to the register page
         /// </summary>
         /// <returns></returns>
-        public async Task RegisterAsync()
+        public async Task LoginAsync()
         {
             // TODO: Go to register page?
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Login);
 
             await Task.Delay(1);
         }
