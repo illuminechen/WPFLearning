@@ -79,7 +79,7 @@
         <Setter Property="Background" Value="{StaticResource WordOrangeBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
         <Setter Property="Padding" Value="50 10"/>
         <Setter Property="Margin" Value="0 10"/>
@@ -97,6 +97,8 @@
                         <Grid>
                             <TextBlock x:Name="contentPresenter"
                                    Text="{TemplateBinding Content}"
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Visibility="{TemplateBinding local:IsBusyProperty.Value, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=True}"
                                    Focusable="False"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
@@ -140,7 +142,7 @@
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}"/>
         <Setter Property="Padding" Value="50 10"/>
         <Setter Property="Margin" Value="0 10"/>
@@ -156,6 +158,8 @@
                             SnapsToDevicePixels="True">
                         <TextBlock x:Name="contentPresenter"
                                    Text="{TemplateBinding Content}"
+                                   FontFamily="{TemplateBinding FontFamily}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Focusable="False"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                    Margin="{TemplateBinding Padding}" 
@@ -191,7 +195,7 @@
         <Setter Property="Background" Value="{StaticResource WordBlueBrush}"/>
         <Setter Property="Foreground" Value="{StaticResource ForegroundWhiteBrush}"/>
         <Setter Property="BorderThickness" Value="0"/>
-        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}"/>
+        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}"/>
         <Setter Property="FontFamily" Value="{StaticResource FontAwesome}"/>
         <Setter Property="Padding" Value="30"/>
         <Setter Property="Margin" Value="0"/>
@@ -212,6 +216,7 @@
                                    Text="{TemplateBinding Content}"
                                    Focusable="False"
                                    FontFamily ="{TemplateBinding FontFamily}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
                                    Margin="{TemplateBinding Padding}" 
                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"

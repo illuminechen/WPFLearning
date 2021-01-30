@@ -4,11 +4,11 @@ using System.Windows.Controls;
 namespace Fasetto.Word
 {
     /// <summary>
-    /// ChatListUserControl.xaml 的互動邏輯
+    /// ChatListItemControl.xaml 的互動邏輯
     /// </summary>
-    public partial class ChatListUserControl : UserControl
+    public partial class ChatListItemControl : UserControl
     {
-        public ChatListUserControl()
+        public ChatListItemControl()
         {
             InitializeComponent();
         }
