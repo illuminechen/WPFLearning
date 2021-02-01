@@ -10,7 +10,7 @@
         /// <summary>
         /// A single instance of the design model
         /// </summary>
-        public static ChatListItemDesignModel Instance => new ChatListItemDesignModel();
+        public static ChatMessageListItemDesignModel Instance => new ChatMessageListItemDesignModel();
 
         #endregion
 

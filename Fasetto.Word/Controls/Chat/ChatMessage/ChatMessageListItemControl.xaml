@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Fasetto.Word"
+             xmlns:core="clr-namespace:Fasetto.Word.Core;assembly=Fasetto.Word.Core"
              mc:Ignorable="d" 
              d:DesignWidth="500">
-    <Border Padding="5" Background="{StaticResource WordBlueBrush}">
+    <Border Padding="5"
+            Background="{StaticResource WordBlueBrush}"
+            d:DataContext="{x:Static core:ChatMessageListItemDesignModel.Instance}">
         <Grid>
 
             <!-- Profile picture -->
@@ -14,13 +17,14 @@
                     HorizontalAlignment="Left"
                     CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
                     Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    Visibility="{Binding SentByMe, Converter={local:BooleanToVisibilityConverter}, ConverterParameter=True}"
                     Margin="0 7.5 0 7.5"
                     Background="Green"
                     BorderBrush="{StaticResource ForegroundWhiteBrush}"
                     BorderThickness="1"
                     Width="35"          
                     >
-                <TextBlock Text="LM"
+                <TextBlock Text="{Binding Initials}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="{StaticResource ForegroundWhiteBrush}"
@@ -29,9 +33,31 @@
             </Border>
 
             <!-- Chat message container -->
-            <Grid Margin="40 0 0 0"
-                  HorizontalAlignment="Left"
+            <Grid Margin="25 0 25 0"
+                  HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
                   >
+
+                <Grid.Triggers>
+
+                    <!-- Mouse over shows time -->
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard Storyboard.TargetName="ExtraDetails" Storyboard.TargetProperty="Opacity">
+                                <DoubleAnimation To="1" Duration="00:00:00.5"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                    <!-- Mouse leave hides time -->
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard Storyboard.TargetName="ExtraDetails" Storyboard.TargetProperty="Opacity">
+                                <DoubleAnimation To="0" Duration="00:00:00.5"></DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+
+                </Grid.Triggers>
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -42,7 +68,7 @@
                 <!-- Speech bubble rectangle -->
                 <Border CornerRadius="10"
                         Padding="15"
-                        Background="{StaticResource ForegroundWhiteBrush}"
+                        Background="{Binding SentByMe,Converter={local:SentByMeToBackgroundConverter}}"
                         >
 
                     <!--Message Text -->
@@ -50,25 +76,45 @@
                                TextWrapping="Wrap"
                                FontFamily="{StaticResource LatoRegular}"
                                Foreground="{StaticResource WordDarkBlueBrush}"
-                               Text="This chat app is awesome! When is it coming out? I want to use it on my PC NOW!!!"/>
+                               Text="{Binding Message}"/>
                 </Border>
 
                 <!-- Chat bubble anchor -->
                 <Path Grid.Row="1" 
-                      Stroke="White" 
+                      Stroke="{Binding SentByMe,Converter={local:SentByMeToBackgroundConverter}}" 
                       StrokeThickness="0" 
                       Panel.ZIndex="1"
                       Margin=" 0 -1 15 0"
-                      Fill="{StaticResource ForegroundWhiteBrush}"
-                      Data="M 10,0 L 5,10 L 20,0 L 10,0"/>
+                      HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
+                      Fill="{Binding SentByMe,Converter={local:SentByMeToBackgroundConverter}}"
+                      Data="{Binding SentByMe, Converter={local:SentByMeToAnchorSVGDataConverter}}"/>
 
-                <!-- Time -->                    
-                <TextBlock Grid.Row="2"
-                           Text="11:54 am"
+                <!-- Time containers -->
+                <StackPanel x:Name="ExtraDetails"
+                            Grid.Row="2"
+                            Opacity="0"
+                            Orientation="Horizontal">
+
+                    <!-- Sent Time -->
+                    <TextBlock
+                           Text="{Binding MessageSentTime,Converter={local:TimeToDisplayTimeConverter}}"
                            Foreground="{StaticResource ForegroundWhiteBrush}"
                            HorizontalAlignment="Right"
                            FontSize="{StaticResource FontSizeSmall}"
+                           FontFamily="{StaticResource LatoRegular}"
+                           Margin=" 0 0 15 0 "
                            />
+
+                    <!-- Read Time -->
+                    <TextBlock
+                           Text="{Binding MessageReadTime,Converter={local:TimeToReadTimeConverter}}"
+                           Foreground="{StaticResource WordDarkBlueBrush}"
+                           HorizontalAlignment="Right"
+                           FontSize="{StaticResource FontSizeSmall}"
+                           FontFamily="{StaticResource LatoRegular}" RenderTransformOrigin="1,0.5"
+                           />
+
+                </StackPanel>
             </Grid>
 
         </Grid>

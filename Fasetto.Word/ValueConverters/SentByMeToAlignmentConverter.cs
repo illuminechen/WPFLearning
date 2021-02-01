@@ -5,16 +5,14 @@ using System.Windows;
 namespace Fasetto.Word
 {
     /// <summary>
-    /// A converter that takes in a boolean and returns a <see cref="Visibility"/>
+    /// A converter that takes in a boolean if a message was sent by me, and return the
+    /// currect background color
     /// </summary>
-    public class BooleanToVisibilityConverter : BaseValueConverter<BooleanToVisibilityConverter>
+    public class SentByMeToBackgroundConverter : BaseValueConverter<SentByMeToBackgroundConverter>
     {
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (parameter == null)
-                return (bool)value ? Visibility.Visible : Visibility.Hidden;
-            else
-                return (bool)value ? Visibility.Hidden : Visibility.Visible;
+            return (bool)value ? Application.Current.FindResource("WordVeryLightBlueBrush") : Application.Current.FindResource("ForegroundWhiteBrush");
         }
 
         public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
