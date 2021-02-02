@@ -33,7 +33,7 @@
             </Border>
 
             <!-- Chat message container -->
-            <Grid Margin="25 0 25 0"
+            <Grid Margin="40 0 25 0"
                   HorizontalAlignment="{Binding SentByMe, Converter={local:SentByMeToAlignmentConverter}}"
                   >
 
@@ -93,13 +93,13 @@
                 <StackPanel x:Name="ExtraDetails"
                             Grid.Row="2"
                             Opacity="0"
+                            HorizontalAlignment="{Binding SentByMe, Converter = {local:SentByMeToAlignmentConverter}, ConverterParameter=True}"
                             Orientation="Horizontal">
 
                     <!-- Sent Time -->
                     <TextBlock
                            Text="{Binding MessageSentTime,Converter={local:TimeToDisplayTimeConverter}}"
-                           Foreground="{StaticResource ForegroundWhiteBrush}"
-                           HorizontalAlignment="Right"
+                           Foreground="{StaticResource ForegroundWhiteBrush}"                           
                            FontSize="{StaticResource FontSizeSmall}"
                            FontFamily="{StaticResource LatoRegular}"
                            Margin=" 0 0 15 0 "
@@ -109,7 +109,6 @@
                     <TextBlock
                            Text="{Binding MessageReadTime,Converter={local:TimeToReadTimeConverter}}"
                            Foreground="{StaticResource WordDarkBlueBrush}"
-                           HorizontalAlignment="Right"
                            FontSize="{StaticResource FontSizeSmall}"
                            FontFamily="{StaticResource LatoRegular}" RenderTransformOrigin="1,0.5"
                            />

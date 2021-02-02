@@ -1,4 +1,5 @@
 ﻿using Fasetto.Word.Core;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,7 +9,7 @@ namespace Fasetto.Word
     /// <summary>
     /// The base page for all pages to gain base functionlity
     /// </summary>
-    public class BasePage : Page
+    public class BasePage : UserControl
     {
         #region Public Properties
 
@@ -45,6 +46,10 @@ namespace Fasetto.Word
         /// </summary>
         public BasePage()
         {
+            //Don't bother animating in design time
+            if (DesignerProperties.GetIsInDesignMode(this))
+                return;
+
             if (PageLoadAnimation != PageAnimation.None)
             {
                 Visibility = Visibility.Collapsed;
@@ -63,7 +68,6 @@ namespace Fasetto.Word
         /// <param name="e"></param>
         private async void BasePage_LoadedAsync(object sender, System.Windows.RoutedEventArgs e)
         {
-
             // If we are setup to animate out on load
             if (ShouldAnimateOut)
                 // Animate the page out
@@ -89,7 +93,7 @@ namespace Fasetto.Word
                 case PageAnimation.SlideAndFadeInFromRight:
 
                     // Start the animation
-                    await this.SlideAndFadeFromRightAsync(SlideSeconds);
+                    await this.SlideAndFadeInFromRightAsync(SlideSeconds, width: (int)Application.Current.MainWindow.Width);
 
                     break;
             }

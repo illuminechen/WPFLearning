@@ -68,15 +68,15 @@ namespace Fasetto.Word
         /// <summary>
         /// The callback event when the <see cref="ValueProperty"/> is changed
         /// </summary>
-        /// <param name="d">The UI element that had it's property changed</param>
+        /// <param name="sender">The UI element that had it's property changed</param>
         /// <param name="e">The arguments for the event</param>
-        private static void OnValuePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnValuePropertyChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
             // Call the parent function
-            (Instance as BaseAttachedProperty<Parent, Property>)?.OnValueChanged(d, e);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.OnValueChanged(sender, e);
 
             // Call event listeners
-            (Instance as BaseAttachedProperty<Parent, Property>)?.ValueChanged(d, e);
+            (Instance as BaseAttachedProperty<Parent, Property>)?.ValueChanged(sender, e);
         }
 
         /// <summary>
