@@ -10,7 +10,7 @@
     <UserControl.Template>
         <ControlTemplate TargetType="{x:Type UserControl}">
             <!-- Main background -->
-            <Border Background="{StaticResource ForegroundWhiteBrush}">
+            <Border>
 
                 <!-- Content -->
                 <Grid>
@@ -36,14 +36,16 @@
                             <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureIcon}"/>
                         </StackPanel>
 
-                        <!-- Setting -->
+                        <!-- Setting button -->
                         <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}"/>
 
                     </Grid>
 
-                    <!-- The user content-->
-                    <ContentPresenter Grid.Row="1"/>
-
+                    <!-- The user content -->
+                    <Border Grid.Row="1"
+                            Background="{StaticResource ForegroundWhiteBrush}">
+                        <ContentPresenter/>
+                    </Border>
                 </Grid>
 
             </Border>

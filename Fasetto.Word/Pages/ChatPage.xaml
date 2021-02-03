@@ -81,11 +81,12 @@
             <TextBox Grid.Column="1"
                      Tag="Write a message..."
                      BorderThickness="0"
-                     Padding="0 10"
+                     Padding="0 10 10 10"
                      AcceptsReturn="True"
                      AcceptsTab="True"
                      FontSize="{StaticResource FontSizeRegular}"
                      VerticalAlignment="Center"
+                     VerticalScrollBarVisibility="Auto"
                      />
 
             <!-- Additional buttons -->

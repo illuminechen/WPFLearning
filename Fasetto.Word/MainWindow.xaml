@@ -144,7 +144,7 @@
             <local:SideMenuControl Width="300" 
                                    local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible,
                                      Source={x:Static local:ViewModelLocator.Instance}}">
-                <ScrollViewer>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <local:ChatListControl/>
                 </ScrollViewer>
             </local:SideMenuControl>
