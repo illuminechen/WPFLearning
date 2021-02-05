@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationViewModel.cs" />
+    <Compile Include="DataModel\ElementHorizontalAlignment.cs" />
+    <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="ViewModels\Chat\ChatList\Design\ChatListDesignModel.cs" />
@@ -62,13 +63,15 @@
     <Compile Include="ViewModels\Base\IHavePassword.cs" />
     <Compile Include="ViewModels\Base\RelayCommand.cs" />
     <Compile Include="ViewModels\Base\RelayParameterizedCommand.cs" />
-    <Compile Include="ViewModels\ChatViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatList\ChatListItemViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatList\ChatListViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\ChatMessageListItemViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\ChatMessageListViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\Design\ChatMessageListItemDesignModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
+    <Compile Include="ViewModels\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
+    <Compile Include="ViewModels\PopupMenu\PopupMenuViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
