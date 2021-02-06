@@ -51,6 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModel\ElementHorizontalAlignment.cs" />
+    <Compile Include="DataModel\IconType.cs" />
+    <Compile Include="DataModel\MenuItemType.cs" />
+    <Compile Include="Icons\IconTypeToFontAwesome.cs" />
     <Compile Include="ViewModels\ApplicationViewModel.cs" />
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="IoC\IoC.cs" />
@@ -69,9 +72,13 @@
     <Compile Include="ViewModels\Chat\ChatMessage\ChatMessageListViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\Design\ChatMessageListItemDesignModel.cs" />
     <Compile Include="ViewModels\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
+    <Compile Include="ViewModels\Menu\Design\MenuDesignModel.cs" />
+    <Compile Include="ViewModels\Menu\Design\MenuItemDesignModel.cs" />
+    <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
+    <Compile Include="ViewModels\Menu\MenuItemViewModel.cs" />
     <Compile Include="ViewModels\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
     <Compile Include="ViewModels\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
-    <Compile Include="ViewModels\PopupMenu\PopupMenuViewModel.cs" />
+    <Compile Include="ViewModels\PopupMenu\BasePopupMenuViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
