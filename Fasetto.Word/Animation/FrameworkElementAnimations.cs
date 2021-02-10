@@ -67,7 +67,10 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
 
             //Wait for it to finish
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
+
+            // Fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -100,7 +103,7 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
 
             //Wait for it to finish
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
         }
 
 
@@ -130,7 +133,10 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
 
             //Wait for it to finish
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
+
+            // Fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion
@@ -163,7 +169,7 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
 
             //Wait for it to finish
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
         }
 
         /// <summary>
@@ -192,7 +198,10 @@ namespace Fasetto.Word
             element.Visibility = Visibility.Visible;
 
             //Wait for it to finish
-            await Task.Delay((int)seconds * 1000);
+            await Task.Delay((int)(seconds * 1000));
+
+            // Fully hide the element
+            element.Visibility = Visibility.Hidden;
         }
 
         #endregion

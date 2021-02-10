@@ -40,7 +40,7 @@ namespace Fasetto.Word
             IoC.Setup();
 
             // Bind a UI Manager
-            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());             
+            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
         }
     }
 }

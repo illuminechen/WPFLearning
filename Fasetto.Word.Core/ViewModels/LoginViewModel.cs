@@ -72,7 +72,7 @@ namespace Fasetto.Word.Core
                  await Task.Delay(500);
 
                  // Go to chat page
-                 IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
+                 IoC.Application.GoToPage(ApplicationPage.Chat);
 
                  //var email = Email;
                  //(parameter as IHavePassword).SecurePassword.Unsecure();
@@ -86,7 +86,7 @@ namespace Fasetto.Word.Core
         public async Task RegisterAsync()
         {
             // TODO: Go to register page?
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
+            IoC.Application.GoToPage(ApplicationPage.Register);
 
             await Task.Delay(1);
         }

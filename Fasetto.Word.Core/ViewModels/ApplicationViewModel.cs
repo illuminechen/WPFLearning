@@ -3,7 +3,7 @@
     /// <summary>
     /// The application state as a view model
     /// </summary>
-    public class ApplicationViewModel:BaseViewModel
+    public class ApplicationViewModel : BaseViewModel
     {
         /// <summary>
         /// The current page of the application
@@ -16,6 +16,11 @@
         public bool SideMenuVisible { get; set; } = true;
 
         /// <summary>
+        /// True if the settings menu should be shown
+        /// </summary>
+        public bool SettingsMenuVisable { get; set; }
+
+        /// <summary>
         /// Navigates to the specified page
         /// </summary>
         /// <param name="page"></param>
@@ -26,8 +31,6 @@
 
             // Show side menu or not
             SideMenuVisible = page == ApplicationPage.Chat;
-
-
         }
     }
 }

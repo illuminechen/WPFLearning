@@ -61,8 +61,7 @@ namespace Fasetto.Word.Core
             // Create commands
             AttachmentButtonCommand = new RelayCommand(AttachmentButton);
             PopupClickawayCommand = new RelayCommand(PopupClickaway);
-            SendCommand = new RelayCommand(Send
-                );
+            SendCommand = new RelayCommand(Send);
 
 
             // Make a default menu
