@@ -46,7 +46,7 @@ namespace Fasetto.Word.Core
         public void Close()
         {
             // Close settings menu
-            IoC.Application.SettingsMenuVisable = false; 
+            IoC.Application.SettingsMenuVisible = false; 
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace Fasetto.Word.Core
         public void Open()
         {
             // Open settings menu
-            IoC.Application.SettingsMenuVisable = true;
+            IoC.Application.SettingsMenuVisible = true;
         }
 
     }

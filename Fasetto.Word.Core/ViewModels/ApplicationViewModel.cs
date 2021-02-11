@@ -18,7 +18,7 @@
         /// <summary>
         /// True if the settings menu should be shown
         /// </summary>
-        public bool SettingsMenuVisable { get; set; }
+        public bool SettingsMenuVisible { get; set; }
 
         /// <summary>
         /// Navigates to the specified page
