@@ -11,6 +11,30 @@ namespace Fasetto.Word.Core
         #region Public Properties
 
         /// <summary>
+        /// The current users Name
+        /// </summary>
+        public TextEntryViewModel Name { get; set; }
+
+        /// <summary>
+        /// The current users Username
+        /// </summary>
+        public TextEntryViewModel Username { get; set; }
+
+        /// <summary>
+        /// The current users Password
+        /// </summary>
+        public TextEntryViewModel Password { get; set; }
+
+        /// <summary>
+        /// The current users Email
+        /// </summary>
+        public TextEntryViewModel Email { get; set; }
+
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
         /// The command to open the settings menu
         /// </summary>
         public ICommand OpenCommand { get; set; }
@@ -46,7 +70,7 @@ namespace Fasetto.Word.Core
         public void Close()
         {
             // Close settings menu
-            IoC.Application.SettingsMenuVisible = false; 
+            IoC.Application.SettingsMenuVisible = false;
         }
 
         /// <summary>

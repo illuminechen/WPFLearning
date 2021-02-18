@@ -55,7 +55,7 @@
     <Compile Include="DataModel\MenuItemType.cs" />
     <Compile Include="Icons\IconTypeToFontAwesome.cs" />
     <Compile Include="IoC\Interfaces\IUIManager.cs" />
-    <Compile Include="ViewModels\ApplicationViewModel.cs" />
+    <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="IoC\base\IoC.cs" />
     <Compile Include="ViewModels\Dialogs\BaseDialogViewModel.cs" />
@@ -76,6 +76,8 @@
     <Compile Include="ViewModels\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
     <Compile Include="ViewModels\Dialogs\Design\MessageBoxDialogViewModel.cs" />
     <Compile Include="ViewModels\Dialogs\MessageBoxDialogViewModel.cs" />
+    <Compile Include="ViewModels\Input\Design\TextEntryDesignViewModel.cs" />
+    <Compile Include="ViewModels\Input\TextEntryViewModel.cs" />
     <Compile Include="ViewModels\Menu\Design\MenuDesignModel.cs" />
     <Compile Include="ViewModels\Menu\Design\MenuItemDesignModel.cs" />
     <Compile Include="ViewModels\Menu\MenuViewModel.cs" />
@@ -83,9 +85,9 @@
     <Compile Include="ViewModels\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
     <Compile Include="ViewModels\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
     <Compile Include="ViewModels\PopupMenu\BasePopupMenuViewModel.cs" />
-    <Compile Include="ViewModels\RegisterViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\SettingsViewModel.cs" />
+    <Compile Include="ViewModels\Application\RegisterViewModel.cs" />
+    <Compile Include="ViewModels\Application\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Application\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Fasetto.Word\.editorconfig">
