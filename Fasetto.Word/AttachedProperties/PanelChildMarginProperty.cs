@@ -11,7 +11,7 @@ namespace Fasetto.Word
     {
         public override void OnValueChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
         {
-            // Get the frame
+            // Get the panel (Grid typically)
             if (!(sender is Panel panel))
                 return;
 

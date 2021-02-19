@@ -58,6 +58,7 @@
     <Compile Include="ViewModels\Application\ApplicationViewModel.cs" />
     <Compile Include="DataModel\ApplicationPage.cs" />
     <Compile Include="IoC\base\IoC.cs" />
+    <Compile Include="ViewModels\Application\Design\SettingsDesignModel.cs" />
     <Compile Include="ViewModels\Dialogs\BaseDialogViewModel.cs" />
     <Compile Include="ViewModels\Chat\ChatList\Design\ChatListDesignModel.cs" />
     <Compile Include="ViewModels\Chat\ChatList\Design\ChatListItemDesignModel.cs" />
